@@ -1,0 +1,7 @@
+# IntelliJ project files
+.idea
+*.iml
+
+
+/GetITFree.mwb.beforefix
+/GetITFree.mwb.bak
