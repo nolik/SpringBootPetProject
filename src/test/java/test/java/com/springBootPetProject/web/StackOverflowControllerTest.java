@@ -31,11 +31,11 @@ public class StackOverflowControllerTest {
     @Test
     public void getListOfWebSites() throws Exception {
         //prepare
-        when(stackOverflowService.findAll()).thenReturn(ImmutableList.of());
+        when(stackOverflowService.findAllFromDB()).thenReturn(ImmutableList.of());
         //testing call
-        List<StackOverflowWebsite> stackOverflowWebsiteList = sut.getListOfWebSites();
+        List<StackOverflowWebsite> stackOverflowWebsiteList = sut.getListOfWebSitesFromDB();
         //validate
-        verify(stackOverflowService).findAll();
+        verify(stackOverflowService).findAllFromDB();
     }
 
 }

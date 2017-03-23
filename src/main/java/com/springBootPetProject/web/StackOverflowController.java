@@ -19,10 +19,16 @@ public class StackOverflowController {
     @Autowired
     private StackOverflowService stackOverflowService;
 
-    @RequestMapping(value = "/api/stackoverflow/", method = RequestMethod.GET)
-    public List<StackOverflowWebsite> getListOfWebSites() {
+    @RequestMapping(value = "/api/stackoverflow/stackExchange", method = RequestMethod.GET)
+    public List<StackOverflowWebsite> getListOfWebSitesFromStackExchange() {
 
 
-        return stackOverflowService.findAll();
+        return stackOverflowService.findAllFromStackExchangeClient();
+    }
+
+    @RequestMapping(value = "/api/stackoverflow/db", method = RequestMethod.GET)
+    public List<StackOverflowWebsite> getListOfWebSitesFromDB() {
+
+        return stackOverflowService.findAllFromDB();
     }
 }

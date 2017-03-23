@@ -45,7 +45,7 @@ public class StackOverflowControllerIT {
     }
 
 
-    TestRestTemplate testRestTemplate = new TestRestTemplate();
+  private   TestRestTemplate testRestTemplate = new TestRestTemplate();
 
     @Test
     public void getListOfWebSites() throws Exception {
