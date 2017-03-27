@@ -21,15 +21,26 @@ import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)
 public class StackOverflowControllerTest {
+
+
     @Mock
     private StackOverflowService stackOverflowService;
 
     @InjectMocks
     StackOverflowController sut;
 
+        @Test
+    public void getListOfWebSitesFromStackExchange() throws Exception {
+        //prepare
+        when(stackOverflowService.findAllFromStackExchangeClient()).thenReturn(ImmutableList.of());
+        //testing call
+        List<StackOverflowWebsite> stackOverflowWebsiteList = sut.getListOfWebSitesFromStackExchange();
+        //validate
+        verify(stackOverflowService).findAllFromStackExchangeClient();
+    }
 
     @Test
-    public void getListOfWebSites() throws Exception {
+    public void getListOfWebSitesFromDB() throws Exception {
         //prepare
         when(stackOverflowService.findAllFromDB()).thenReturn(ImmutableList.of());
         //testing call
@@ -37,5 +48,4 @@ public class StackOverflowControllerTest {
         //validate
         verify(stackOverflowService).findAllFromDB();
     }
-
 }

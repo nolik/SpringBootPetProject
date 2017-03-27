@@ -48,7 +48,7 @@ public class StackOverflowControllerIT {
   private   TestRestTemplate testRestTemplate = new TestRestTemplate();
 
     @Test
-    public void getListOfWebSites() throws Exception {
+    public void getListOfWebSitesFromStackExchange() throws Exception {
         ResponseEntity<List<StackOverflowWebsite>> responseEntity =
                 testRestTemplate.exchange("http://localhost:8099/api/stackoverflow/", HttpMethod.GET, null,
                         new ParameterizedTypeReference<List<StackOverflowWebsite>>() {
